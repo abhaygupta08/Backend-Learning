@@ -1,0 +1,17 @@
+<h1>Welcome to Home Page!</h1> 
+<br/>
+<p style="color : green;"><%= SuccessMessage %> </p>
+<br/>
+<a href="protected">Protected</a>
+<br/>
+
+<% if(userId) {%>
+    <%= userId %>
+<form method="post" action="/logout"><button type="submit">Logout </button></form>
+    <%} else{ %>
+    <a href="/login"> Login </a> <a href="/register"> Register </a>
+<%} %>
+
+</body>
+
+</html>

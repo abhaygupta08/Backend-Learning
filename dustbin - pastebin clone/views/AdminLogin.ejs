@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs', {title: 'Create Paste'}) %>
+
+<div style="margin:0 5rem;padding:1rem 2rem;">
+    <br/><h2>Login as Admin</h2>
+    <% if(LoginError) { %>
+        <p style="color:red;"> <%= LoginError %> </p>
+<% } %>
+        <form style="display: flex; flex-direction: column; gap: 1rem;" action="/admin" method="post">
+            <input maxlength="4" type="password" name="pin" placeholder="Enter PIN">    
+        <input style="cursor: pointer;" type="submit" value="Login">
+    </form>
+</div>
+
+    </body>
+</html>

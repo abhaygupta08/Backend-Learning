@@ -1,0 +1,39 @@
+<%- include('./partials/header.ejs', {title: 'All Pastes' }) %>
+            <div style="display : flex; flex-direction : column; gap : 15rem;">
+                <div style="display: flex; flex-direction:column; gap:2rem;">
+                    <% pastes.forEach(paste=> { %>
+                        <div  style="border: 1px solid black;border-radius:0.5rem;margin:0 5rem;padding:1rem 2rem;">
+                            <h3>
+                            <%= paste.title.trim() %>
+                        </h3>
+                        <pre>
+                            <%= paste.content.trim() %>
+                        </pre>
+                        <a class="link"  href="/edit/<%= paste._id %>">Edit</a> | 
+                        <a  class="link" href="/paste/<%= paste._id %>">View</a> | 
+                        <a  class="link" href="/raw/<%= paste._id %>">Download</a>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+
+
+            <br />
+            <br />
+            <br />
+            <div align="center">
+
+                <a  class="link"  href="/createPaste">Create Paste</a>
+                <a  class="link" href="/admin">Admin Login</a>
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
+                <p style="font-size: 0.8rem">
+                    Developed by <a class="link" href="https://abhaygupta.me">Abhay Gupta</a>
+                </p>
+            </div>
+        </div>
+    </body>
+
+    </html>

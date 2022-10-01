@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs', {title: 'Create Paste' }) %>
+    <form style="margin:0 5rem;padding:1rem 2rem;display: flex;flex-direction: column; gap:2rem;" action="/paste"
+        method="post">
+
+        <input type="text" name="title" placeholder="Title" />
+        <textarea rows="5" name="content" required placeholder="Content"></textarea>
+        <button type="submit">Create Paste</button>
+
+
+    </form>
+
+
+    </body>
+
+    </html>

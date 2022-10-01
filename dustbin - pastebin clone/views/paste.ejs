@@ -1,0 +1,31 @@
+<%- include('./partials/header.ejs', {title: 'Create Paste'}) %>
+
+<div style="margin:0 5rem;padding:1rem 2rem;">
+    <h2><%= paste.title %></h2>
+    <p style="font-size: 0.8rem;"> Created On : <%= paste.createdOn %>  |   Modified On : <%= paste.modifiedOn %></p>
+    <br/>
+    <pre> <%= paste.content %> </pre>
+    <br/>
+    
+</div>
+<div align="center">
+    <div id="deletePostDiv">
+        Delete Link : <a id="deletePost" href=""> </a>
+    </div>
+    <br/>
+    <a class="link"  href="/raw/<%= paste._id %>">Raw</a> |
+    <a  class="link" href="/edit/<%= paste._id %>">Edit</a>
+</div>
+<script>
+if(window.location.search){
+
+    document.querySelector('#deletePost').href = `${window.location.host}/delete/${window.location.search.split('=')[1]}`;
+    document.querySelector('#deletePost').innerHTML = `${window.location.host}/delete/${window.location.search.split('=')[1]}`
+}
+else{
+    document.querySelector('#deletePostDiv').remove()
+}
+
+    </script>
+</body>
+</html>
